@@ -1,7 +1,6 @@
 class Rocks  {
     constructor(x,y,width,height) {
       var options = {
-          density: 0.5,
           isStatic: false
       }
       this.body = Bodies.rectangle(x,y,width,height,options);
@@ -12,12 +11,13 @@ class Rocks  {
     }
     display(){
       var pos =this.body.position;
+      var angle = this.body.angle;
       push()
+      rotate(angle)
+      translate(pos.x,pos.y)
       imageMode(CENTER)
-      if(frameCount%100===0){
-       
-        image(this.rk, pos.x , pos.y, 400,300 )
-      }
+      image(this.rk, 0,0, this.width,this.height )
+      
       
     
       //rect(pos.x, pos.y, this.width, this.height);\
