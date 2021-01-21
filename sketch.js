@@ -2,7 +2,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-var rocks
+var rocks = []
 
 function preload(){
   bg = loadImage("Images/bg.png")
@@ -19,7 +19,7 @@ function setup() {
   player.scale = 0.50
   fill("brown")
   ground = new Ground(500,600,1000,10)
-  rocks = new Rocks(random(100,900),0,50,50)
+  rocks = new Rocks(random(100,900),0,250,200)
  
 }
 
@@ -39,6 +39,7 @@ function draw() {
     player.x = player.x - 10
     }
   }
+  
   console.log(player.x)
   drawSprites()
 }
