@@ -16,7 +16,15 @@ class Rocks  {
       rotate(angle)
       translate(pos.x,pos.y)
       imageMode(CENTER)
-      image(this.rk, 0,0, this.width,this.height )
+      
+      if(this.body.position.y>=480){
+        World.remove(world,this.body)
+
+      }
+      else{
+        image(this.rk, 0,0, this.width,this.height )
+
+      }
       
       
     
